@@ -1,48 +1,45 @@
-/* src/App.css */
-/* nav {
-  margin-bottom: 6px;
-  padding: 0 4rem;
-} */
-
+/* Increase specificity to override Bootstrap defaults */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
+  padding: 1rem 3rem !important; 
+  /* background-color: #f8f9fa;  */
 }
 
-.logo {
+.navbar .logo {
   display: flex;
   align-items: center;
 }
 
-.logo-image {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+.navbar .logo-image {
+  width: 40px; 
+  height: auto;
+  margin-right: 40px; 
 }
 
-.nav-links {
+.navbar .logo-text {
+  font-size: 1.5em; /* Adjust text size */
+  font-weight: bold; /* Optional: Make text bold */
+}
+
+/* Style for nav-links */
+.navbar .nav-links {
   display: flex;
   align-items: center;
 }
 
-.nav-link {
-  margin-left: 15px;
-  text-decoration: none;
-  color: #007bff;
-  font-size: 16px;
+.navbar .nav-link {
+  margin: 0 10px; 
+  text-decoration: none !important; 
+  color: blue !important; 
 }
 
-.nav-link:hover {
-  text-decoration: underline;
+/* Style for nav-links on hover */
+.navbar .nav-link:hover {
+  text-decoration: underline !important;
 }
 
-.divider {
-  margin: 0 15px;
-  color: #ccc;
-  font-size: 16px;
+/* Style for the divider */
+.navbar .divider {
+  margin: 0 10px;
 }
 
 
@@ -58,11 +55,11 @@ nav a {
 }
 
 /* App.css */
-
 .rocket-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin: 2rem;
 }
 
 .rocket-card {
@@ -123,7 +120,7 @@ nav a {
 
 /* Styles for the Missions Component */
 .missions-container {
-  padding: 20px;
+  padding: 1rem 3rem;
 }
 
 .missions-title {
@@ -178,36 +175,40 @@ nav a {
 /* Styles for the My Profile Page */
 .profile-container {
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
+  justify-content: space-between;
+  padding: 3rem;
 }
 
-.profile-section {
+.profile-column {
   width: 45%;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.profile-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-align: center;
+.profile-heading {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
-.profile-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.profile-list-item {
+.box-container {
+  border: 1px solid #ccc;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
 }
 
-.profile-list-item:last-child {
-  border-bottom: none;
+.profile-box {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+}
+
+
+
+@media (max-width: 768px) {
+  .rocket-card {
+    flex-direction: column;
+  }
+
+  .rocket-image {
+    width: 90vw;
+    /* height: 200px; */
+  }
 }

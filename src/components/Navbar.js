@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="logo">
         <img src={planet} alt="SpaceX Mission App" className="logo-image" />
-        <span>SpaceX Mission App</span>
+        <span className="logo-text">SpaceX Mission App</span>
       </div>
       <div className="nav-links">
         <Link to="/" className="nav-link">Rockets</Link>

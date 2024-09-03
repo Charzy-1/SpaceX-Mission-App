@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import '../App.css'; 
+import '../App.css';
 
 const MyProfile = () => {
   const rockets = useSelector((state) => state.rockets.filter((rocket) => rocket.reserved));
@@ -8,25 +8,25 @@ const MyProfile = () => {
 
   return (
     <div className="profile-container">
-      <div className="profile-section">
-        <h2 className="profile-title">My Missions</h2>
-        <ul className="profile-list">
+      <div className="profile-column">
+        <h2 className="profile-heading">My Missions</h2>
+        <div className="box-container">
           {missions.map((mission) => (
-            <li key={mission.id} className="profile-list-item">
+            <div key={mission.id} className="profile-box">
               {mission.name}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
-      <div className="profile-section">
-        <h2 className="profile-title">My Rockets</h2>
-        <ul className="profile-list">
+      <div className="profile-column">
+        <h2 className="profile-heading">My Rockets</h2>
+        <div className="box-container">
           {rockets.map((rocket) => (
-            <li key={rocket.id} className="profile-list-item">
+            <div key={rocket.id} className="profile-box">
               {rocket.name}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

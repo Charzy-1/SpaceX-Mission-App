@@ -18,7 +18,6 @@ function Missions() {
 
   return (
     <div className="missions-container">
-      <h2 className="missions-title">SpaceX Mission App</h2>
       <Table bordered hover className="missions-table">
         <thead>
           <tr>
