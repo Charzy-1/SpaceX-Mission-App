@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
@@ -18,13 +18,30 @@ function App() {
   return (
     <Router>
       <nav>
-        <NavLink exact to="/" activeClassName="active-link">Rockets</NavLink>
-        <NavLink to="/missions" activeClassName="active-link">Missions</NavLink>
-        <NavLink to="/profile" activeClassName="active-link">My Profile</NavLink>
+        <NavLink 
+          to="/" 
+          className={({ isActive }) => (isActive ? "active-link" : undefined)}
+        >
+          Rockets
+        </NavLink>
+        <NavLink 
+          to="/missions" 
+          className={({ isActive }) => (isActive ? "active-link" : undefined)}
+        >
+          Missions
+        </NavLink>
+        <NavLink 
+          to="/profile" 
+          className={({ isActive }) => (isActive ? "active-link" : undefined)}
+        >
+          My Profile
+        </NavLink>
       </nav>
-      <Route exact path="/" component={Rockets} />
-      <Route path="/missions" component={Missions} />
-      <Route path="/profile" component={MyProfile} />
+      <Routes>
+        <Route path="/" element={<Rockets />} />
+        <Route path="/missions" element={<Missions />} />
+        <Route path="/profile" element={<MyProfile />} />
+      </Routes>
     </Router>
   );
 }

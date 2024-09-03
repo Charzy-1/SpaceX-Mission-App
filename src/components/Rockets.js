@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { reserveRocket, cancelRocketReservation } from '../redux/rocketsSlice';
 import { Card, Button, Container, Row, Col, Badge } from 'react-bootstrap';
+import '../App.css'; 
 
 function Rockets() {
   const rockets = useSelector((state) => state.rockets);
