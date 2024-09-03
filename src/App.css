@@ -3,7 +3,7 @@
   margin-bottom: 6px;
   padding: 0 4rem;
 } */
- 
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -55,6 +55,70 @@ nav a {
 .active-link {
   text-decoration: underline;
   color: blue;
+}
+
+/* App.css */
+
+.rocket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rocket-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.rocket-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.rocket-details {
+  flex: 1;
+}
+
+.rocket-details h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.rocket-details p {
+  margin: 10px 0;
+}
+
+.badge {
+  background-color: #28a745;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  margin-top: 15px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.button-container button.cancel {
+  background-color: #dc3545;
+  color: white;
 }
 
 /* Styles for the Missions Component */

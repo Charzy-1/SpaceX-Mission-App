@@ -1,8 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { reserveRocket, cancelRocketReservation } from '../redux/rocketsSlice';
-import { Card, Button, Container, Row, Col, Badge } from 'react-bootstrap';
-import '../App.css'; 
+import '../App.css'; // Assuming this is where your custom styles are located
 
 function Rockets() {
   const rockets = useSelector((state) => state.rockets);
@@ -17,37 +16,32 @@ function Rockets() {
   };
 
   return (
-    <Container>
-      <Row>
-        {rockets.map((rocket) => (
-          <Col md={4} key={rocket.id} className="mb-4">
-            <Card>
-              <Card.Img variant="top" src={rocket.flickr_images[0]} />
-              <Card.Body>
-                <Card.Title>{rocket.rocket_name}</Card.Title>
-                <Card.Text>{rocket.description}</Card.Text>
-                {rocket.reserved && <Badge bg="success">Reserved</Badge>}
-                {rocket.reserved ? (
-                  <Button
-                    variant="danger"
-                    onClick={() => handleCancelReservation(rocket.id)}
-                  >
-                    Cancel Reservation
-                  </Button>
-                ) : (
-                  <Button
-                    variant="primary"
-                    onClick={() => handleReserve(rocket.id)}
-                  >
-                    Reserve Rocket
-                  </Button>
-                )}
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div className="rocket-list">
+      {rockets.map((rocket) => (
+        <div key={rocket.id} className="rocket-card">
+          <img src={rocket.flickr_images[0]} alt={rocket.rocket_name} className="rocket-image" />
+          <div className="rocket-details">
+            <h2>{rocket.rocket_name}</h2>
+            <p>{rocket.description}</p>
+            {rocket.reserved && <span className="badge">Reserved</span>}
+            <div className="button-container">
+              {rocket.reserved ? (
+                <button
+                  className="cancel"
+                  onClick={() => handleCancelReservation(rocket.id)}
+                >
+                  Cancel Reservation
+                </button>
+              ) : (
+                <button onClick={() => handleReserve(rocket.id)}>
+                  Reserve Rocket
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
 
