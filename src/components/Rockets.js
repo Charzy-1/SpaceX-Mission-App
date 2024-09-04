@@ -27,13 +27,17 @@ function Rockets() {
             <div className="button-container">
               {rocket.reserved ? (
                 <button
+                  type="button" // Added type attribute
                   className="cancel"
                   onClick={() => handleCancelReservation(rocket.id)}
                 >
                   Cancel Reservation
                 </button>
               ) : (
-                <button onClick={() => handleReserve(rocket.id)}>
+                <button
+                  type="button" // Added type attribute
+                  onClick={() => handleReserve(rocket.id)}
+                >
                   Reserve Rocket
                 </button>
               )}

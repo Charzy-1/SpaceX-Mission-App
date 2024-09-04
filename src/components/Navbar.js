@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css'; 
-import planet from '../images/planet.png';  
+import '../App.css';
+import planet from '../images/planet.png';
 
 function Navbar() {
   return (

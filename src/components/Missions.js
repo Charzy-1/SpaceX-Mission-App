@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { joinMission, leaveMission } from '../redux/missionsSlice';
 import { Table, Button, Badge } from 'react-bootstrap';
+import { joinMission, leaveMission } from '../redux/missionsSlice';
 import '../App.css';
 
 function Missions() {

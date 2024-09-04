@@ -18,7 +18,9 @@ function App() {
 
   return (
     <Router>
-      <Navbar /> {/* Add the Navbar component here */}
+      <Navbar />
+      {' '}
+      {/* Add the Navbar component here */}
       <Routes>
         <Route path="/" element={<Rockets />} />
         <Route path="/missions" element={<Missions />} />

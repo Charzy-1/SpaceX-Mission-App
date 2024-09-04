@@ -6,7 +6,7 @@ export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () =>
   const data = await response.json();
   // Ensure data is an array
   if (Array.isArray(data)) {
-    return data.map(rocket => ({
+    return data.map((rocket) => ({
       id: rocket.id,
       rocket_name: rocket.name,
       description: rocket.description,
@@ -24,19 +24,15 @@ const rocketsSlice = createSlice({
   reducers: {
     reserveRocket: (state, action) => {
       const rocketId = action.payload;
-      return state.map(rocket =>
-        rocket.id !== rocketId
-          ? rocket
-          : { ...rocket, reserved: true }
-      );
+      return state.map((rocket) => (rocket.id !== rocketId
+        ? rocket
+        : { ...rocket, reserved: true }));
     },
     cancelRocketReservation: (state, action) => {
       const rocketId = action.payload;
-      return state.map(rocket =>
-        rocket.id !== rocketId
-          ? rocket
-          : { ...rocket, reserved: false }
-      );
+      return state.map((rocket) => (rocket.id !== rocketId
+        ? rocket
+        : { ...rocket, reserved: false }));
     },
   },
   extraReducers: (builder) => {
